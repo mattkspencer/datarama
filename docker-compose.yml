@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - SEC_API_EMAIL=${SEC_API_EMAIL}
+      - ENVIRONMENT=${ENVIRONMENT}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - CACHE_TTL=${CACHE_TTL}
+    volumes:
+      - ./src:/app/src
+      - ./.env:/app/.env
+    restart: unless-stopped
+    
+  dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+    command: ["pytest", "--watch"] 

@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: value_investing_app
+Version: 0.1
+Requires-Dist: streamlit
+Requires-Dist: plotly
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: python-dotenv
