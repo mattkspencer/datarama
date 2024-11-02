@@ -1,6 +1,6 @@
-.DS_Store
-.env
-node_modules/
+*.egg-info/
 __pycache__/
 *.pyc
+.env
 .venv/
+.DS_Store
